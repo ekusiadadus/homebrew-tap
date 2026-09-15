@@ -1,0 +1,27 @@
+name: Homebrew install
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    env:
+      HOMEBREW_NO_ANALYTICS: '1'
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Homebrew/actions/setup-homebrew@304fc86d2c26bcd269547dbcfcfb4c853e710779
+      - name: Install from public tap
+        run: brew install ekusiadadus/tap/ttybird
+      - name: Test installed binary
+        run: |
+          brew test ekusiadadus/tap/ttybird
+          ttybird --version
+          ttybird providers --json
