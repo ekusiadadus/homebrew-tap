@@ -1,22 +1,22 @@
 class Ttybird < Formula
   desc "Find coding agents and return to their terminals"
   homepage "https://github.com/ekusiadadus/ttybird"
-  version "0.8.3"
+  version "0.8.4"
   license "MIT"
 
   on_macos do
     depends_on arch: :arm64
     depends_on macos: :sonoma
 
-    url "https://github.com/ekusiadadus/ttybird/releases/download/v0.8.3/ttybird-0.8.3-aarch64-apple-darwin.tar.gz"
-    sha256 "09bdda5cdbcc8ad7b0584928387e66881b0ff55b79bc24edc9b8d6c8650bba5e"
+    url "https://github.com/ekusiadadus/ttybird/releases/download/v0.8.4/ttybird-0.8.4-aarch64-apple-darwin.tar.gz"
+    sha256 "2b0895f7c49ccbab699e221fc64618b0ac27998611aacbec46f64d87e32f2fda"
   end
 
   on_linux do
     depends_on arch: :x86_64
 
-    url "https://github.com/ekusiadadus/ttybird/releases/download/v0.8.3/ttybird-0.8.3-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "3bca4759fee1f0c69d22687de1a00033e26f31993a1ed9e218d22bd54dfe4abd"
+    url "https://github.com/ekusiadadus/ttybird/releases/download/v0.8.4/ttybird-0.8.4-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "4cc0a9b586d56effa67fc39915b38e80f267481d5263584e0952891488025a67"
   end
 
   def install
